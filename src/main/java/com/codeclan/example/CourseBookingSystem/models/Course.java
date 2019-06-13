@@ -1,5 +1,6 @@
 package com.codeclan.example.CourseBookingSystem.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -21,7 +22,7 @@ public class Course {
     @Column(name = "star_rating")
     private int starRating;
     @OneToMany(mappedBy = "course")
-    @JsonIgnoreProperties(value = {"bookings", "course"})
+    @JsonIgnore
     private List<Booking> bookings;
 
     public Course(String name, String town, int starRating) {

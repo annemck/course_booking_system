@@ -22,12 +22,12 @@ public class CustomerController {
         return customerRepository.customersByCourse(id);
     }
 
-    @GetMapping(value = "/course/{id}/town/{town}")
+    @GetMapping(value = "/courses/{id}/town/{town}")
     public List<Customer> getCustomerByCourseAndTown(@PathVariable Long id, @PathVariable String town){
         return customerRepository.getCustomersByTownAndCourse(id, town);
     }
 
-    @GetMapping(value = "/course/{id}/town/{town}/age/{age}")
+    @GetMapping(value = "/courses/{id}/town/{town}/age/{age}")
     public List<Customer> getCustomerOverAgeByCourseAndTown(@PathVariable Long id,
                                                             @PathVariable String town,
                                                             @PathVariable int age){

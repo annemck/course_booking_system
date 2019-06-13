@@ -1,6 +1,7 @@
 package com.codeclan.example.CourseBookingSystem.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -20,7 +21,7 @@ public class Customer {
     private String town;
     @Column
     private int age;
-    @JsonIgnoreProperties(value = "customer")
+    @JsonIgnore
     @OneToMany(mappedBy = "customer")
     private List<Booking> bookings;
 
